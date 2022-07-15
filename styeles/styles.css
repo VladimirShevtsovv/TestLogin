@@ -114,7 +114,7 @@ h1 {
   display: none;
 }
 .containerWithRadio div input:checked + label:before {
-  background: url(/images/radioImgChecked.svg) 0 0 no-repeat;
+  background: url("../images/radioImgChecked.svg") 0 0 no-repeat;
   top: 1.7px;
   left: 0;
 }
@@ -138,7 +138,7 @@ h1 {
   position: absolute;
   left: -0.5px;
   top: 1px;
-  background: url(/images/radioImg.svg) 0 0 no-repeat;
+  background: url("../images/radioImg.svg") 0 0 no-repeat;
 }
 
 button {

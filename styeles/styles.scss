@@ -6,6 +6,8 @@
   font-family: 'Work Sans', serif;
 }
 
+
+
 $main-text-color: #111111;
 $label-color: #7C7C7C;
 $input-border-color: #F2F2F2;
@@ -125,7 +127,8 @@ height: calc(100% - 52px);
       display: none;
 
       &:checked + label:before {
-        background: url(/images/radioImgChecked.svg) 0 0 no-repeat;
+
+        background: url('../images/radioImgChecked.svg') 0 0 no-repeat;
         top: 1.7px;
         left: 0;
       }
@@ -148,7 +151,7 @@ height: calc(100% - 52px);
         position: absolute;
         left: -0.5px;
         top: 1px;
-        background: url(/images/radioImg.svg) 0 0 no-repeat;
+        background: url('../images/radioImg.svg') 0 0 no-repeat;
       }
     }
 
