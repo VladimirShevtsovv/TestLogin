@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@200;300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans&family=Work+Sans:wght@200;300;400;500&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="./styeles/styles.css">
+    <link rel="stylesheet" href="./styeles/customSelect.css">
+    <script defer src="./scripts/customSelect.js"></script>
+</head>
+<body>
+
+
+<main>
+    <aside>
+        Sign up
+    </aside>
+    <div class="container-with-form">
+        <h1 class="qwe">New user?</h1>
+        <span>Use the form below to create your account.</span>
+        <form class="form">
+            <div class="form__row">
+                <div>
+                    <label for="input__name">First Name</label>
+                    <input type="text" id="input__name" class="form__input"/>
+                </div>
+                <div>
+                    <label for="input__lastName">Last Name</label>
+                    <input type="text" id="input__lastName" class="form__input"/>
+                </div>
+            </div>
+            <div class="form__row">
+                <div>
+                    <label>Nationality</label>
+                    <div class="form__dateSelect" id="dateNationalitySelect">
+                        <div id="dateChoicesDateNationality" class="containerWithChoicesValue"></div>
+                        <ul id="dateChoicesNationalityList" class="dateChoicesList"></ul>
+                        <img src="./images/arrow.svg" alt="arrow" id="dateNationalityArrow"/>
+                    </div>
+                </div>
+                <div>
+                    <label for="input__email">E-mail</label>
+                    <input type="email" id="input__email" class="form__input"/>
+                </div>
+            </div>
+            <div class="form__row">
+                <div>
+                    <label>Date of Birth</label>
+                    <div class="containerWithSelects">
+                        <div class="form__dateSelect" id="dateDaysSelect">
+                            <div id="dateChoicesDay" class="containerWithChoicesValue"></div>
+                            <ul id="dateChoicesDayList" class="dateChoicesList"></ul>
+                            <img src="./images/arrow.svg" alt="arrow" id="dateDaysArrow"/>
+                        </div>
+                        <div class="form__dateSelect" id="dateMonthSelect">
+                            <div id="dateChoicesDateMonth" class="containerWithChoicesValue"></div>
+                            <ul id="dateChoicesMonthList" class="dateChoicesList"></ul>
+                            <img src="./images/arrow.svg" alt="arrow" id="dateMonthArrow"/>
+                        </div>
+                        <div class="form__dateSelect" id="dateYearsSelect">
+                            <div id="dateChoicesDateYears" class="containerWithChoicesValue"></div>
+                            <ul id="dateChoicesYearsList" class="dateChoicesList"></ul>
+                            <img src="./images/arrow.svg" alt="arrow" id="dateYearsArrow"/>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <label>Gender</label>
+                    <div class="containerWithRadio">
+                        <div>
+                            <input type="radio" name="gender" value="Male" id="input__genderChoice-1"/>
+                            <label for="input__genderChoice-1">Male</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="gender" value="Female" id="input__genderChoice-2"/>
+                            <label for="input__genderChoice-2">Female</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form__row">
+                <div id="input__password-container">
+                    <label for="input__password">Password</label>
+                    <input type="password" id="input__password" class="form__input"/>
+                </div>
+                <div>
+                    <label for="input__passwordConfirm">Confirm Password</label>
+                    <input type="password" id="input__passwordConfirm" class="form__input"/>
+                </div>
+            </div>
+            <div class="form__row last-row">
+                <div>
+                    <div class="isLogin">
+                        Have an account?
+                        <a>Login</a>
+                    </div>
+                </div>
+                <button>Complete Signup</button>
+            </div>
+        </form>
+    </div>
+
+</main>
+
+
+</body>
+</html>

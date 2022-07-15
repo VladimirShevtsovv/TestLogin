@@ -1,0 +1,90 @@
+.containerWithSelects {
+  display: flex;
+  width: 100% !important;
+  justify-content: space-between;
+  margin-top: 6px;
+  color: #111111;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 400;
+  font-style: normal;
+  margin-bottom: 12px;
+}
+
+#dateNationalitySelect {
+  margin-bottom: 12.5px;
+  margin-top: 5px;
+  color: #111111;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 400;
+  font-style: normal;
+  width: 100%;
+}
+#dateNationalitySelect div {
+  width: 100%;
+}
+
+#dateDaysSelect {
+  width: 24%;
+}
+
+#dateMonthSelect {
+  width: 39%;
+}
+
+#dateYearsSelect {
+  width: 29%;
+}
+
+.form__dateSelect {
+  position: relative;
+}
+.form__dateSelect .containerWithChoicesValue {
+  min-height: 21.5px;
+  background: white;
+  padding-bottom: 6.5px;
+  border-bottom: 1px solid #F2F2F2;
+  line-height: 0.9em;
+  cursor: pointer;
+}
+.form__dateSelect img {
+  position: absolute;
+  right: 0;
+  top: 28%;
+  transition: 0.1s linear;
+  transform: rotate(0);
+}
+.form__dateSelect .rotateImg {
+  transform: rotate(180deg);
+}
+.form__dateSelect .dateChoicesList {
+  position: absolute;
+  display: none;
+  z-index: 10;
+  transition: 0.1s linear;
+  list-style: none;
+  border: 1px solid #F2F2F2;
+  border-top: none;
+  width: 100%;
+  max-height: 200px;
+  overflow: auto;
+  background: white;
+}
+.form__dateSelect .dateDaysList-item {
+  min-height: 16px;
+  padding: 5px 5px 0;
+  margin-bottom: 5px;
+  color: #111111;
+  transition: 0.1s linear;
+  cursor: pointer;
+}
+.form__dateSelect .dateDaysList-item:hover {
+  color: #5A61ED;
+}
+.form__dateSelect .visibleSelect {
+  display: flex !important;
+  flex-direction: column;
+}
+
+/*# sourceMappingURL=customSelect.css.map */
