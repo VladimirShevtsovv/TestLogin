@@ -25,10 +25,13 @@ body {
   display: flex;
   justify-content: center;
   align-items: flex-start;
+  height: 100vh;
+
 }
 
 main {
   display: flex;
+
 }
 
 aside {
@@ -51,9 +54,10 @@ h1 {
 }
 
 .container-with-form {
-  padding: 39px 23px 39px 22px;
+  padding: 39px 23px 33px 22px;
   width: 79.5%;
   background: white;
+
 
   span {
     @include textStyle(14px, 16px, 300, $main-text-color);
@@ -107,10 +111,10 @@ height: calc(100% - 52px);
   }
 
   .last-row{
-    margin-top: auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-top: 87px;
   }
 }
 
@@ -130,7 +134,7 @@ height: calc(100% - 52px);
 
         background: url('../images/radioImgChecked.svg') 0 0 no-repeat;
         top: 1.7px;
-        left: 0;
+        left: -1px;
       }
     }
 
@@ -149,7 +153,7 @@ height: calc(100% - 52px);
         width: 17px;
         height: 18px;
         position: absolute;
-        left: -0.5px;
+        left: -1.5px;
         top: 1px;
         background: url('../images/radioImg.svg') 0 0 no-repeat;
       }
@@ -193,6 +197,9 @@ button {
 }
 
 @media (max-width: 504px) {
+  main{
+    width: 100%;
+  }
 .container-with-form{
   padding: 30px  15px;
 }
@@ -204,6 +211,7 @@ button {
 
   }
   .last-row {
+    margin-top: 30px !important;
     &> div{
       display: flex; justify-content: center;
       order: 2;

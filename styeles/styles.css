@@ -10,6 +10,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: flex-start;
+  height: 100vh;
 }
 
 main {
@@ -44,7 +45,7 @@ h1 {
 }
 
 .container-with-form {
-  padding: 39px 23px 39px 22px;
+  padding: 39px 23px 33px 22px;
   width: 79.5%;
   background: white;
 }
@@ -95,10 +96,10 @@ h1 {
   border-bottom: 1px solid #F2F2F2;
 }
 .form .last-row {
-  margin-top: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 87px;
 }
 
 .containerWithRadio {
@@ -116,7 +117,7 @@ h1 {
 .containerWithRadio div input:checked + label:before {
   background: url("../images/radioImgChecked.svg") 0 0 no-repeat;
   top: 1.7px;
-  left: 0;
+  left: -1px;
 }
 .containerWithRadio div label {
   cursor: pointer;
@@ -136,7 +137,7 @@ h1 {
   width: 17px;
   height: 18px;
   position: absolute;
-  left: -0.5px;
+  left: -1.5px;
   top: 1px;
   background: url("../images/radioImg.svg") 0 0 no-repeat;
 }
@@ -184,6 +185,9 @@ button {
 }
 
 @media (max-width: 504px) {
+  main {
+    width: 100%;
+  }
   .container-with-form {
     padding: 30px 15px;
   }
@@ -194,6 +198,7 @@ button {
     width: 100% !important;
   }
   .last-row {
+    margin-top: 30px !important;
     flex-direction: column;
   }
   .last-row > div {
