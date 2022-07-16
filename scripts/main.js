@@ -119,7 +119,8 @@
                 checkBoxError.classList.add('errors-visible')
             }
 
-
+            const allErrorsVisible = document.querySelectorAll('.errors-visible')
+            console.log(allErrorsVisible)
             if (allErrorsVisible.length === 0) {
                 const randomNumber = Math.round(Math.random())
                 loader.style.display = 'inline-block'
@@ -142,6 +143,7 @@
                         method: 'GET',
                     })
                     console.log(await request.json())
+
                     allInputs.forEach(item=>{
                         item.value = ''
                         item.style.borderBottom = '1px solid #F2F2F2'
@@ -150,6 +152,10 @@
                     allChoicesContainer.forEach(item=>{
                         item.innerHTML = ''
                         item.style.borderBottom = '1px solid #F2F2F2'
+                    })
+
+                    allCheckBoxes.forEach(item=>{
+
                     })
 
                     loader.style.display = 'none'
