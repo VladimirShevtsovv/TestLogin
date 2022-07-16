@@ -7,7 +7,6 @@
 }
 
 
-
 $main-text-color: #111111;
 $label-color: #7C7C7C;
 $input-border-color: #F2F2F2;
@@ -47,13 +46,38 @@ aside {
   padding: 22px 6px;
   align-items: flex-end;
   font-family: 'PT Sans', sans-serif;
+  z-index: 10;
+
 }
 
+#my-svg {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+
+}
+
+
 h1 {
+  width: calc(100% - 55px);
+  max-width: 485px;
   @include textStyle(21.5px, 25px, 400, $main-text-color);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.form__description {
+  display: block;
+  max-width: 485px;
+  width: calc(100% - 55px);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .container-with-form {
+  position: relative;
   padding: 39px 23px 33px 22px;
   width: 79.5%;
   background: white;
@@ -64,13 +88,26 @@ h1 {
   }
 }
 
+
+.row-with-select-1 {
+
+
+  z-index: 200;
+
+}
+
+.row-with-select-2 {
+  z-index: 100;
+
+}
+
 .form {
   display: flex;
   width: 100%;
   margin-top: 15px;
-
   flex-direction: column;
-height: calc(100% - 52px);
+  height: calc(100% - 52px);
+  position: relative;
 
 
   label {
@@ -81,13 +118,42 @@ height: calc(100% - 52px);
   .form__row {
     width: 100%;
     display: flex;
-
     justify-content: space-between;
+    transition: 0.15s linear;
+    opacity: 0;
+
+
+    .errors {
+      font-size: 8px;
+      line-height: 14px;
+      position: absolute;
+      top: -18px;
+      right: 0;
+      display: block;
+      transition: 0.1s linear;
+      opacity: 0;
+      color: #FF2222;
+    }
+
+    .errors-visible {
+      transition: 0.1s linear;
+      opacity: 1;
+    }
+
+    &:not(:last-child) {
+      transform: translateY(-100px);
+    }
+
 
     & > div {
       width: 48.5%;
-    }
+      position: relative;
 
+
+      .errorsDefault {
+        top: 6px;
+      }
+    }
 
     input {
       margin-bottom: 12.5px;
@@ -100,7 +166,6 @@ height: calc(100% - 52px);
     }
   }
 
-
   .form__input {
     padding: 3.5px 0 6px;
     letter-spacing: .4px;
@@ -110,11 +175,12 @@ height: calc(100% - 52px);
     border-bottom: 1px solid $input-border-color;
   }
 
-  .last-row{
+  .last-row {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-top: 87px;
+    opacity: 1;
   }
 }
 
@@ -131,7 +197,6 @@ height: calc(100% - 52px);
       display: none;
 
       &:checked + label:before {
-
         background: url('../images/radioImgChecked.svg') 0 0 no-repeat;
         top: 1.7px;
         left: -1px;
@@ -165,7 +230,9 @@ height: calc(100% - 52px);
 
 }
 
+
 button {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -177,6 +244,32 @@ button {
   cursor: pointer;
   background-color: #5A61ED;
   font-family: 'PT Sans', sans-serif;
+
+  span {
+    display: none;
+    position: absolute;
+    color: #FF2222 !important;
+    top: -80%;
+  }
+
+}
+
+
+.button__error {
+  animation: 1s ease-in-out 1.2s normal none running trambling-animation;
+}
+
+
+@keyframes trambling-animation {
+  0%, 50%, 100% {
+    transform: translateX(0);
+  }
+  10%, 30% {
+    transform: translateX(-10px);
+  }
+  20%, 40% {
+    transform: translateX(10px);
+  }
 }
 
 .isLogin {
@@ -188,6 +281,7 @@ button {
   @include textStyle(12px, 14px, 300, black);
   letter-spacing: .5px;
 
+
   a {
     cursor: pointer;
     margin-left: 5px;
@@ -197,37 +291,52 @@ button {
 }
 
 @media (max-width: 504px) {
-  main{
+  main {
     width: 100%;
   }
-.container-with-form{
-  padding: 30px  15px;
-}
-  .form__row{
+  .container-with-form {
+    padding: 30px 15px;
+  }
+  .form__row {
     flex-direction: column;
-    & > div{
+
+    .container-with-select-nationality {
+      order: 2;
+    }
+
+    .container-with-select-date-of-birth{
+      order: 2;
+    }
+
+    & > div {
       width: 100% !important;
     }
 
   }
   .last-row {
     margin-top: 30px !important;
-    &> div{
-      display: flex; justify-content: center;
+
+    & > div {
+      display: flex;
+      justify-content: center;
       order: 2;
       margin-top: 10px;
     }
-    .isLogin{
+
+    .isLogin {
       display: flex;
     }
+
     flex-direction: column;
   }
 
 }
+
 @media (max-width: 400px) {
   aside {
     min-width: 90px;
-  }}
+  }
+}
 
 
 

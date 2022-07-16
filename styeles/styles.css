@@ -34,17 +34,39 @@ aside {
   padding: 22px 6px;
   align-items: flex-end;
   font-family: "PT Sans", sans-serif;
+  z-index: 10;
+}
+
+#my-svg {
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
 
 h1 {
+  width: calc(100% - 55px);
+  max-width: 485px;
   color: #111111;
   font-size: 21.5px;
   line-height: 25px;
   font-weight: 400;
   font-style: normal;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.form__description {
+  display: block;
+  max-width: 485px;
+  width: calc(100% - 55px);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .container-with-form {
+  position: relative;
   padding: 39px 23px 33px 22px;
   width: 79.5%;
   background: white;
@@ -57,12 +79,21 @@ h1 {
   font-style: normal;
 }
 
+.row-with-select-1 {
+  z-index: 200;
+}
+
+.row-with-select-2 {
+  z-index: 100;
+}
+
 .form {
   display: flex;
   width: 100%;
   margin-top: 15px;
   flex-direction: column;
   height: calc(100% - 52px);
+  position: relative;
 }
 .form label {
   color: #7C7C7C;
@@ -76,9 +107,33 @@ h1 {
   width: 100%;
   display: flex;
   justify-content: space-between;
+  transition: 0.15s linear;
+  opacity: 0;
+}
+.form .form__row .errors {
+  font-size: 8px;
+  line-height: 14px;
+  position: absolute;
+  top: -18px;
+  right: 0;
+  display: block;
+  transition: 0.1s linear;
+  opacity: 0;
+  color: #FF2222;
+}
+.form .form__row .errors-visible {
+  transition: 0.1s linear;
+  opacity: 1;
+}
+.form .form__row:not(:last-child) {
+  transform: translateY(-100px);
 }
 .form .form__row > div {
   width: 48.5%;
+  position: relative;
+}
+.form .form__row > div .errorsDefault {
+  top: 6px;
 }
 .form .form__row input {
   margin-bottom: 12.5px;
@@ -100,6 +155,7 @@ h1 {
   justify-content: space-between;
   align-items: center;
   margin-top: 87px;
+  opacity: 1;
 }
 
 .containerWithRadio {
@@ -143,6 +199,7 @@ h1 {
 }
 
 button {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -159,7 +216,28 @@ button {
   background-color: #5A61ED;
   font-family: "PT Sans", sans-serif;
 }
+button span {
+  display: none;
+  position: absolute;
+  color: #FF2222 !important;
+  top: -80%;
+}
 
+.button__error {
+  animation: 1s ease-in-out 1.2s normal none running trambling-animation;
+}
+
+@keyframes trambling-animation {
+  0%, 50%, 100% {
+    transform: translateX(0);
+  }
+  10%, 30% {
+    transform: translateX(-10px);
+  }
+  20%, 40% {
+    transform: translateX(10px);
+  }
+}
 .isLogin {
   display: flex;
   margin-top: auto;
@@ -193,6 +271,12 @@ button {
   }
   .form__row {
     flex-direction: column;
+  }
+  .form__row .container-with-select-nationality {
+    order: 2;
+  }
+  .form__row .container-with-select-date-of-birth {
+    order: 2;
   }
   .form__row > div {
     width: 100% !important;

@@ -1,5 +1,9 @@
 (function () {
     document.addEventListener('DOMContentLoaded', function () {
+
+        const dateError = document.getElementById('dateError');
+        const nationalityError = document.getElementById('nationalityError');
+
         const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
         const Nationality = ['American', 'Armenian', 'Belgian', 'Canadian', 'Danish']
 
@@ -17,6 +21,15 @@
                 choicesDateDay.innerHTML = containerWithDay.textContent
                 dateChoicesDayList.classList.remove('visibleSelect')
                 arrowDownDays.classList.remove('rotateImg')
+
+                choicesDateDay.style.borderBottom = '1px solid #42bd25'
+
+
+                if (choicesDateDay.textContent && choicesDateMonth.textContent && choicesDateYears.textContent) {
+                    dateError.style.color = 'white'
+
+
+                }
 
             })
             dateChoicesDayList.append(containerWithDay)
@@ -47,13 +60,20 @@
                 dateChoicesMonthList.classList.remove('visibleSelect')
                 arrowDownMonth.classList.remove('rotateImg')
 
+                choicesDateMonth.style.borderBottom = '1px solid #42bd25'
+
+                if (choicesDateDay.textContent && choicesDateMonth.textContent && choicesDateYears.textContent) {
+                    dateError.style.color = 'white'
+                    dateError.classList.remove('errors-visible')
+                }
+
             })
             dateChoicesMonthList.append(containerWithMonth)
         }
 
         const dateChoicesYearsList = document.getElementById('dateChoicesYearsList')
         const choicesDateYears = document.getElementById('dateChoicesDateYears')
-        const arrowDownYears= document.getElementById('dateYearsArrow')
+        const arrowDownYears = document.getElementById('dateYearsArrow')
 
         choicesDateYears.addEventListener('click', function (e) {
             dateChoicesYearsList.classList.toggle('visibleSelect')
@@ -69,6 +89,13 @@
                 choicesDateYears.innerHTML = containerWithDay.textContent
                 dateChoicesYearsList.classList.remove('visibleSelect')
                 arrowDownYears.classList.remove('rotateImg')
+
+                choicesDateYears.style.borderBottom = '1px solid #42bd25'
+
+                if (choicesDateDay.textContent && choicesDateMonth.textContent && choicesDateYears.textContent) {
+                    dateError.style.color = 'white'
+                    dateError.classList.remove('errors-visible')
+                }
             })
             dateChoicesYearsList.append(containerWithDay)
         }
@@ -85,15 +112,21 @@
 
 
         for (let i = 0; i < Nationality.length; i++) {
-            const containerWithMonth = document.createElement('li')
-            containerWithMonth.classList.add('dateDaysList-item')
-            containerWithMonth.innerHTML = `${Nationality[i]}`
-            containerWithMonth.addEventListener('click', function (e) {
-                choicesDateNationality.innerHTML = containerWithMonth.textContent
+            const containerWithNationality = document.createElement('li')
+            containerWithNationality.classList.add('dateDaysList-item')
+            containerWithNationality.innerHTML = `${Nationality[i]}`
+            containerWithNationality.addEventListener('click', function (e) {
+                choicesDateNationality.innerHTML = containerWithNationality.textContent
                 dateChoicesNationalityList.classList.remove('visibleSelect')
                 arrowDownNationality.classList.remove('rotateImg')
+
+
+                choicesDateNationality.style.borderBottom = '1px solid #42bd25'
+                nationalityError.style.color = 'white'
+
+
             })
-            dateChoicesNationalityList.append(containerWithMonth)
+            dateChoicesNationalityList.append(containerWithNationality)
         }
 
 
@@ -127,6 +160,9 @@
             }
 
         })
+
+        const button = document.getElementById('button')
+
 
     })
 
