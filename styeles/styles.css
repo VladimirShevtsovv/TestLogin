@@ -264,7 +264,7 @@ button span {
 
 @media (max-width: 504px) {
   main {
-    width: 100%;
+    width: 100vw;
   }
   .container-with-form {
     padding: 30px 15px;

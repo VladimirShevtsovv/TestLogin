@@ -145,11 +145,11 @@
                     console.log(await request.json())
 
                     allInputs.forEach(item=>{
-                        item.value === ''
+                        item.value = ''
                     })
 
                     allChoicesContainer.forEach(item=>{
-                        item.textContent===''
+                        item.innerHTML = ''
                     })
 
                     loader.style.display = 'none'
