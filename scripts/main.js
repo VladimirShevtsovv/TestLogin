@@ -162,6 +162,7 @@
                     button.style.color = 'white'
                     button.removeAttribute('disabled')
                     successfulPage.style.transform = 'translateY(0)'
+                    successfulPage.style.opacity = '1'
                     loginContainer.style.zIndex = '350'
                 }
             }

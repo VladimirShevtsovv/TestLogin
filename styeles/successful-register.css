@@ -12,6 +12,7 @@
     padding-left: 64px;
     transform: translateY(-100%);
     transition: 0.3s linear;
+opacity: 0;
 
 
 }
